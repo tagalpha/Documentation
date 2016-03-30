@@ -1,0 +1,86 @@
+Sur un nouveau répertoire Git
+--------------------------------------------------------------------
+#	git config --global user.name "<pseudo>"
+#	git config --global user.email <email>
+#	git init
+#	git remote add origin <SSH>
+#	git clone / add
+
+
+Définit UserName et adresse email
+--------------------------------------------------------------------
+#	git config --global user.name "<pseudo>"
+#	git config --global user.email <email>
+
+
+Définit un répertoire comme étant un répertoire de dépôt
+--------------------------------------------------------------------
+#	git init
+
+
+Affiche l'etat des fichiers dans l'indexation
+--------------------------------------------------------------------
+#	git status
+#	git status -s
+
+
+Ignorer des fihiers / dossiers à indexer
+--------------------------------------------------------------------
+#	vim .gitignore
+
+
+Indexation des fichiers
+--------------------------------------------------------------------
+#	git add <file>
+#	git add .
+
+
+Fait un commit
+--------------------------------------------------------------------
+#	git commit -m "<message>"
+
+
+Prend le précédent commit pour y ajouter un nouveau fichier dedans
+--------------------------------------------------------------------
+#	git commit --amend
+
+
+Enlever un fichier de l'indexation
+--------------------------------------------------------------------
+#	git reset HEAD <file>
+
+
+Enlève toutes les dernières modif d'un fichier
+--------------------------------------------------------------------
+#	git checkout <file>
+
+
+Donne la clée SSH du serveur distant sur GitHub
+--------------------------------------------------------------------
+#	git remote add origin <clée ssh>
+
+
+Donne la source de données sur le serveur
+--------------------------------------------------------------------
+#	git remote
+#	git remote -v
+
+
+Supprime une source de donneés
+--------------------------------------------------------------------
+#	git remote remove <nom source>
+
+
+Créer une banche et te place dessus
+--------------------------------------------------------------------
+#	git checkout -b <nom branche>
+
+
+Générer une clée SSH pour sa machine
+--------------------------------------------------------------------
+#	ssh-keygen -t rsa -b 4096 -C "<email>"
+
+
+Affiche la clée SSH publique
+--------------------------------------------------------------------
+#	vim /c/Users/Nicolas/.ssh/id_rsa.pub

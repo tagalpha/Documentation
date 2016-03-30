@@ -1,0 +1,25 @@
+Installation de ruby
+---------------------------------------------------------
+-> http://rubyinstaller.org/
+
+Installation de Rails
+---------------------------------------------------------
+-> http://railsinstaller.org/fr-FR
+
+Installation des bundles
+---------------------------------------------------------
+c:/>gem install bundler
+
+Redémarrage commande
+
+Création du projet
+---------------------------------------------------------
+c:/chemin/dossier/creation/projet>rails new <nom projet>
+
+Lancer serveur ruby
+---------------------------------------------------------
+c:/chemin/projet>bin/rails server
+
+Navigateur
+---------------------------------------------------------
+http://localhost:3000

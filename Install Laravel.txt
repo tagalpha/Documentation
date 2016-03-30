@@ -1,0 +1,103 @@
+-> Prérequis
+--> Avoir composer d'installer sur la machine
+
+--------------------------------------------------------------------------------------------------------------------
+
+-> Création d'un projet Laravel vierge à partir du model GitHub
+--> c:\projects\> composer create-project laravel/laravel --prefer-dist <titre>
+
+---------------------------------------------------------------------------------------------------------------------
+ _________________________________________
+|                                         |
+| Génération d'un Model Controller & View |
+|_________________________________________|
+
+-> Configurer le fichier de connexion à la base de données
+--> /.env
+
+-> Créer la base de données
+--> Aller dans PhpMyAdmin et faire une création de base de données normale
+
+-> Créer le fichier de migration
+--> Renseigner les tables qui devront être créer dans la base de données
+---> c:\projects\> php artisan make:migration <description> --create=<table>
+----> <description> : Ne doit ps contenir d'espace ni de caractères spéciaux
+----> <table> : doit se terminer par un 's'
+
+-> Ajouter dans le fichier de migrations les différents champs
+--> Permet de choisir quels champs doivent être créés dans chaque table
+---> Trouver le fichier de la migrations qui se trouve dans le dossier suivant: /database/migrations/<nom_fichier>
+----> Ajouter dedans les champs de la table
+
+-> Faire la migration
+--> Créer de manière automatique les Model qui aurront été générés avec leurs champs respectifs, directement en base de données
+---> c:\projects\> php artisan migrate
+
+-> Générer le fichier Model qui est l'entitée qui représente la table en base de données
+--> c:\projects\> php artisan make:model <Model>
+---> <Model> : De préférence le même nom de que la table qu'il représente avec une majuscule mais sans 's' à la fin
+
+-> Ajouter dans le fichier Model les champs que l'on autorise à l'écriture, modification, suppression
+--> protected $fillable = ['title', 'content', ...];
+
+-> Générer le Controller
+--> c:\projects\> php artisan make:controller <Controller>Controller
+---> <Controller>Controller : contient le nom du controller ex: 'CuisineController', toujours mettre 'Controller' à la fin
+
+-> En haut dans les Use, ne pas oublier d'appeler use App\<Model>
+
+-> Créer les vues
+--> Les fichiers des vues sont en .blade.php
+
+---------------------------------------------------------------------------------------------------------------------
+ ________________________
+|                        |
+| Barre de débug Laravel |
+|________________________|
+
+Installation de la dépendance barryvdh/laravel-debugbar
+-------------------------------------------------------
+
+-> Ajouter la dépendance du package barryvdh/laravel-debugbar
+--> c:\projects\> composer require barryvdh/laravel-debugbar
+----> Faire ensuite un update pour ajouter la dépendance au projet
+-----> c:\projects\> composer update
+
+-> Pour finir l'installation de la dépendance, il faut la définir dans Laravel
+--> Aller dans le fichier /config/app.php dans le bloc 'Autoloaded Service Providers' dans la sous partie 'Application Service Providers...'
+--> Ajouter le NameSpace complet de la dépendance en locurrence : <Barryvdh\Debugbar\ServiceProvider::class,>
+---> Puis ajouter son alias que l'on utilisera dans le code dans le bloc 'Class Aliases'
+----> Ajouter l'alias et le nom du NameSpace : <'Debugbar' => Barryvdh\Debugbar\Facade::class,>
+
+
+---------------------------------------------------------------------------------------------------------------------
+ __________________________
+|                          |
+| Génération de formulaire |
+|__________________________|
+
+Installation de la dépendance adamwathan/bootforms
+---------------------------------------------
+
+-> Ajouter la dépendance du package adamwathan/bootforms
+--> c:\projects\> composer require adamwathan/bootforms
+----> Faire ensuite un update pour ajouter la dépendance au projet
+-----> c:\projects\> composer update
+
+-> Pour finir l'installation de la dépendance, il faut la définir dans Laravel
+--> Aller dans le fichier /config/app.php dans le bloc 'Autoloaded Service Providers' dans la sous partie 'Application Service Providers...'
+--> Ajouter le NameSpace complet de la dépendance en locurrence : <AdamWathan\BootForms\BootFormsServiceProvider::class,>
+---> Puis ajouter son alias que l'on utilisera dans le code dans le bloc 'Class Aliases'
+----> Ajouter l'alias et le nom du NameSpace : <'BootForm' => AdamWathan\BootForms\Facades\BootForm::class>
+
+
+
+
+
+
+
+
+
+
+
+

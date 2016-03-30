@@ -1,0 +1,26 @@
+Installation de composer
+----------------------------------------------------------------------------------------------------
+https://getcomposer.org/download/
+-> Télécharger le point exe et faire l'installation
+
+Installation de symfony
+----------------------------------------------------------------------------------------------------
+https://symfony.com/download
+
+Ouvrir ligne de windows cmd
+----------------------------------------------------------------------------------------------------
+c:\projects\> php -r "file_put_contents('symfony', file_get_contents('http://symfony.com/installer'));"
+
+Création du projet
+----------------------------------------------------------------------------------------------------
+c:\projects\> php symfony new my_project_name
+
+Installation de composer.phar
+----------------------------------------------------------------------------------------------------
+c:\projects\> php -r "eval('?>'.file_get_contents('http://getcomposer.org/installer'));"
+
+Faire un vhost qui pointe sur le dossier web du projet
+
+Faire apparaitre le commande symfony
+----------------------------------------------------------------------------------------------------
+> php app/console
