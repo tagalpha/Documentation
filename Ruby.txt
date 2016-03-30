@@ -38,17 +38,12 @@ http://localhost:3000
 
 Ajout de mysql
 ---------------------------------------------------------
-Ajouter en bas du fichier Gemfile => gem mysql2
+Ajouter en bas du fichier Gemfile => gem 'mysql2'
+c:/chemin/projet>gem install mysql2
 c:/chemin/projet>bundle install
 
 Modifier le fichier /config/database.yml :
 
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-#
 default: &default
   adapter: mysql2
   pool: 5
@@ -61,9 +56,6 @@ development:
   password:
   host: localhost
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
 test:
   <<: *default
   database: db/test.mysql2
@@ -76,7 +68,7 @@ Faire attention à l'indentation !!!
 
 Génération de migration
 ---------------------------------------------------------
-c:/chemin/projet>bin/rails generate migration CreateArticle name:string
+c:/chemin/projet>bin/rails generate migration CreatePokemon name:string
 
 Création base
 ---------------------------------------------------------
@@ -85,5 +77,32 @@ c:/chemin/projet>bin/rake db:create
 Faire migration
 ---------------------------------------------------------
 c:/chemin/projet>bin/rake db:migrate
+
+Génération de model
+---------------------------------------------------------
+c:/chemin/projet>bin/rails generate model <nom_model> <champ>:<type_du_champ> --skip-test-framework
+c:/chemin/projet>bin/rake db:migrate
+
+Génération du model, génération migratio, génération controller, génération helper, génération view
+---------------------------------------------------------
+c:/chemin/projet>bin/rails generate scaffold <nom_model> <champ>:<type_du_champ> --skip-test-framework --skip-assets
+
+Génération de lien entre deux obejets
+---------------------------------------------------------
+c:/chemin/projet>bin/rails generate migration AddTypeToPokemon type:belongs_to
+c:/chemin/projet>bin/rake db:migrate
+
+Installation de helper de formulaire simple_form
+---------------------------------------------------------
+Modifier le GemFile gem 'simple_form'
+c:/chemin/projet>bundle install
+c:/chemin/projet>bin/rails generate simple_form:install --bootstrap
+
+Installation d'une pagination
+---------------------------------------------------------
+Modifier le GemFile gem 'will_paginate'
+Modifier le Gemfile gem 'will_paginate_bootstrap'
+c:/chemin/projet>bundle install
+
 
 
