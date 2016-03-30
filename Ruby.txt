@@ -16,6 +16,14 @@ Création du projet
 ---------------------------------------------------------
 c:/chemin/dossier/creation/projet>rails new <nom projet>
 
+Edition fichier Gemfile
+---------------------------------------------------------
+Décommenter => gem 'therubyracer'
+
+Installation de toutes les gem necessaire au projet présente dans le Gemfile
+---------------------------------------------------------
+c:/chemin/dossier/creation/projet>bundle install
+
 Lancer serveur ruby
 ---------------------------------------------------------
 c:/chemin/projet>bin/rails server
