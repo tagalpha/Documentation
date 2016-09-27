@@ -1,7 +1,7 @@
 Installation de composer
 ----------------------------------------------------------------------------------------------------
 https://getcomposer.org/download/
--> Télécharger le point exe et faire l'installation
+-> TÃ©lÃ©charger le point exe et faire l'installation
 
 Installation de symfony
 ----------------------------------------------------------------------------------------------------
@@ -11,7 +11,11 @@ Ouvrir ligne de windows cmd
 ----------------------------------------------------------------------------------------------------
 c:\projects\> php -r "file_put_contents('symfony', file_get_contents('http://symfony.com/installer'));"
 
-Création du projet
+Installation avec composer
+----------------------------------------------------------------------------------------------------
+composer create-project symfony/framework-standard-edition my_project_name
+
+CrÃ©ation du projet
 ----------------------------------------------------------------------------------------------------
 c:\projects\> php symfony new my_project_name
 
